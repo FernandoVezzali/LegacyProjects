@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Store.Data.UserRepository" BaseTypeListCollapsed="true">
+    <Position X="8" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAQACAAABAAAAAAAAAAAAEIAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Repositories\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Data.ProductRepository" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAQACAAABAAAAAAAAAAAAEIAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ProductRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Data.CategoryRepository" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAQACAAABAAAAAAAAAAAAEIAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Repositories\CategoryRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Data.BrandRepository" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAQACAAABAAAAAAAAAAAAEIAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Repositories\BrandRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Store.Data.IRepository&lt;T&gt;">
+    <Position X="12.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAQACAAABAAAAAAAAAAAAEIAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

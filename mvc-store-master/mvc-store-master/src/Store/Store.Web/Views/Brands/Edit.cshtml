@@ -1,0 +1,49 @@
+﻿@model Store.Web.Models.ViewModels.Brand
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Brands", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Edit a product.</h4>
+    <hr />
+    @Html.ValidationSummary()
+    @Html.HiddenFor(model => model.BrandId)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Category, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.CategoryId, ((IEnumerable<Store.Web.Models.ViewModels.Category>)ViewBag.PossibleCategories).Select(option => new SelectListItem
+                {
+                    Text = (option == null ? "None" : option.Name),
+                    Value = option.CategoryId.ToString(),
+                    Selected = (Model != null) && (option.CategoryId == Model.CategoryId)
+                }), "Choose...")
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DFB040D-1955-44B5-AF47-F1D21FA0A776}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Store.Domain</RootNamespace>
+    <AssemblyName>Store.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.0.2\lib\net40\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Brand.cs" />
+    <Compile Include="DataContexts\DomainContext.cs" />
+    <Compile Include="DataContexts\DomainMigrations\201312241158598_InitialCreate.cs" />
+    <Compile Include="DataContexts\DomainMigrations\201312241158598_InitialCreate.Designer.cs">
+      <DependentUpon>201312241158598_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\DomainMigrations\201312292200129_Genre.cs" />
+    <Compile Include="DataContexts\DomainMigrations\201312292200129_Genre.Designer.cs">
+      <DependentUpon>201312292200129_Genre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\DomainMigrations\201401011824029_brand.cs" />
+    <Compile Include="DataContexts\DomainMigrations\201401011824029_brand.Designer.cs">
+      <DependentUpon>201401011824029_brand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\DomainMigrations\Configuration.cs" />
+    <Compile Include="DataContexts\StoreContext.cs" />
+    <Compile Include="DataContexts\StoreMigrations\201312241157572_InitialCreate.cs" />
+    <Compile Include="DataContexts\StoreMigrations\201312241157572_InitialCreate.Designer.cs">
+      <DependentUpon>201312241157572_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\StoreMigrations\201312301313522_FirstName.cs" />
+    <Compile Include="DataContexts\StoreMigrations\201312301313522_FirstName.Designer.cs">
+      <DependentUpon>201312301313522_FirstName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\StoreMigrations\201312301324203_Log.cs" />
+    <Compile Include="DataContexts\StoreMigrations\201312301324203_Log.Designer.cs">
+      <DependentUpon>201312301324203_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\StoreMigrations\Configuration.cs" />
+    <Compile Include="Entities\Genre.cs" />
+    <Compile Include="Entities\IBrand.cs" />
+    <Compile Include="Entities\ICategory.cs" />
+    <Compile Include="Entities\IdentityModels.cs" />
+    <Compile Include="Entities\IProduct.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Entities.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataContexts\DomainMigrations\201312241158598_InitialCreate.resx">
+      <DependentUpon>201312241158598_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\DomainMigrations\201312292200129_Genre.resx">
+      <DependentUpon>201312292200129_Genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\DomainMigrations\201401011824029_brand.resx">
+      <DependentUpon>201401011824029_brand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\StoreMigrations\201312241157572_InitialCreate.resx">
+      <DependentUpon>201312241157572_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\StoreMigrations\201312301313522_FirstName.resx">
+      <DependentUpon>201312301313522_FirstName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\StoreMigrations\201312301324203_Log.resx">
+      <DependentUpon>201312301324203_Log.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

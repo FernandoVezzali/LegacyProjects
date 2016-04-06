@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>JustMock</id>
+    <version>2014.1.1217.4</version>
+    <title>Telerik JustMock Lite</title>
+    <authors>Telerik AD</authors>
+    <owners>Telerik AD</owners>
+    <licenseUrl>http://www.telerik.com/purchase/license-agreement/justmocklite.aspx</licenseUrl>
+    <projectUrl>http://www.telerik.com/freemocking.aspx</projectUrl>
+    <iconUrl>http://www.telerik.com/libraries/justmock/jmlogo32x32.sflb</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>The most powerful free mocking library available for .NET developers.</description>
+    <summary>The most powerful free mocking library available for .NET developers.</summary>
+    <releaseNotes>What's fixed:
+
+Fixed: Mock.Create overload with FluentProxy doesn't work with base classes which don't have a default constructor 
+Fixed: Ninject AutoMock miscalculates ocurrences 
+Fixed: Telerik.JustMock.Helpers namespace interracts with non public arrangements
+Fixed: Mock.Raise fails with data driven unit tests</releaseNotes>
+    <copyright>Copyright (c) 2010-2013 Telerik AD</copyright>
+    <language>en-US</language>
+    <tags>tdd mocking mocks mock aaa unittest unittesting unit-testing testing fake faking stub stubbing isolation</tags>
+    <dependencies>
+      <dependency id="CommonServiceLocator" version="[1.0]" />
+      <dependency id="Unity" version="[2.1.505.2]" />
+    </dependencies>
+  </metadata>
+</package>

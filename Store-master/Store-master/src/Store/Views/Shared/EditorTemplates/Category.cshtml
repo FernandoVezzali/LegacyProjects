@@ -1,0 +1,7 @@
+﻿@using Store.Domain
+@using Store.Helpers
+@{
+    var items = (new Category()).GetItems((int?)Model.CategoryId);
+}
+
+@Html.DropDownList("CategoryId", items, new { @id = "CategoryId", @name = "CategoryId" })

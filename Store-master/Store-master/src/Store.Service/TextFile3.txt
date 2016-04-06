@@ -1,0 +1,3 @@
+﻿https://flyingpies.wordpress.com/2009/08/01/17/
+http://flyingpies.wordpress.com/2009/08/13/signing-amazon-product-advertising-api-cwcf-part-2/
+http://docs.aws.amazon.com/AWSECommerceService/latest/DG/WSDLLocation.html

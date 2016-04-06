@@ -1,0 +1,7 @@
+﻿@using Store.Domain
+@using Store.Helpers
+@{
+    var items = typeof(Genre).GetItems((int?)Model);
+}
+
+@Html.DropDownList("", items)

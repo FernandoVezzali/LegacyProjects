@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Store.Models.Brand>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script language="JavaScript" type="text/javascript">
+
+    alert('test');
+
+    try {
+
+        $.get('/Custom/CustomAction/3', null, function (data) {
+            alert(data);
+            $('#centerbody').html(data);
+        }, 'html');
+        
+        alert('test');
+        
+        
+    } catch (e) {
+        alert(e);
+    }
+
+            /*$.get(action, null, function (data) {
+                $('#someDiv').html(data);
+            }, 'html');
+                alert('test');
+
+            $('#centerbody').load('/Custom/CustomAction/3', function (html) {
+                $('#centerbody')[0].value = html;
+
+
+
+            });
+                    */
+
+
+    
+</script> 
+
+
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div id="centerbody"></div>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryId)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Edit", "Edit", new { id=item.BrandId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BrandId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BrandId })
+        </td>
+    </tr>
+}
+
+</table>

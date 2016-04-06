@@ -1,0 +1,29 @@
+﻿@model Store.Web.Models.ViewModels.Category
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            @using (Html.BeginForm(new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.CategoryId)
+                @Html.Partial("_CreateOrEdit", Model)
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

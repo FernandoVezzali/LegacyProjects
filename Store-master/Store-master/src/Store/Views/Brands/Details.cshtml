@@ -1,0 +1,30 @@
+﻿@model Store.Models.Brand
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Brand</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CategoryId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoryId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.BrandId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

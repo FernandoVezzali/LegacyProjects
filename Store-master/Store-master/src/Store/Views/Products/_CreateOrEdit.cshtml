@@ -1,0 +1,16 @@
+@model Store.Models.Product
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Category, new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Category)
+        @Html.ValidationMessageFor(model => model.Category)
+    </div>
+</div>

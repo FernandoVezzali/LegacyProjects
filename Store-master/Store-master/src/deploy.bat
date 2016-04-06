@@ -1,0 +1,1 @@
+msbuild ./deploy.build /target:Compile

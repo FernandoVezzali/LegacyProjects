@@ -1,0 +1,64 @@
+﻿using System;
+using System.Configuration;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using Amazon.PAAPI.Amazon.PAAPI;
+
+
+namespace Amazon.PAAPI
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var ci = CultureInfo.InvariantCulture.Clone() as CultureInfo;
+            ci.NumberFormat.NumberDecimalSeparator = ".";
+
+            List<string> products = new List<string>();
+            List<string> price = new List<string>();
+
+            var amazonClient = new AWSECommerceServicePortTypeClient();
+            var request = new ItemSearchRequest();
+            request.SearchIndex = "All";
+            //request.Title = "WCF";
+            request.Keywords = "projector -3d";
+            request.ResponseGroup = new string[] { "ItemAttributes", "Images" };
+            request.ItemPage = "1";
+
+            var itemSearch = new ItemSearch();
+            itemSearch.Request = new ItemSearchRequest[] { request };
+            itemSearch.AWSAccessKeyId = ConfigurationManager.AppSettings["accessKeyId"];
+            itemSearch.AssociateTag = "testfo-20";
+
+            // send the ItemSearch request
+            ItemSearchResponse response = amazonClient.ItemSearch(itemSearch);
+
+            foreach (Items itens in response.Items)
+            {
+                foreach (Item item in itens.Item.OrderBy(x=>x.SalesRank))
+                {
+                    ItemAttributes attributes = item.ItemAttributes;
+                    Console.WriteLine(attributes.Title);
+                    
+                    if (attributes.ListPrice != null)
+                    {
+                        Console.WriteLine(attributes.ListPrice.FormattedPrice);    
+                    }
+                    
+                    CustomerReviews reviews = item.CustomerReviews;
+                    if (reviews != null && reviews.HasReviews)
+                    {
+                        string url = reviews.IFrameURL;
+                        Console.WriteLine(url);
+                    }
+
+                    Console.WriteLine("------------");
+                }
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
